@@ -144,4 +144,5 @@ Los resultados obtenidos deben interpretarse como **evidencia de pruebas del pro
 ---
 
 **Proyecto académico — Ingeniería Civil Industrial**
+
 *Prototipo de apoyo a la evaluación del rediseño del macroproceso comercial de Inmobiliaria Numancia S.A.*
