@@ -1,0 +1,138 @@
+/* NUMANCIA — Estilos del simulador visual To-Be
+   Editar este archivo para cambiar la apariencia sin tocar la lógica Python.
+   Streamlit 1.36+; algunos selectores data-testid dependen de la versión. */
+
+:root {
+  --num-navy:#17324D;
+  --num-navy-2:#203F5B;
+  --num-blue:#3273A5;
+  --num-ink:#25354A;
+  --num-muted:#64748B;
+  --num-bg:#F6F8FC;
+  --num-line:#DAE4EE;
+  --num-green:#2C7E5B;
+  --num-amber:#AE6E1A;
+  --num-radius:16px;
+  --num-shadow:0 7px 22px rgba(23,50,77,.055);
+}
+
+/* Distribución y tipografía */
+.stApp { background:var(--num-bg); color:var(--num-ink); }
+.main .block-container { max-width:1550px; padding-top:1.25rem; padding-bottom:3rem; }
+h1,h2,h3,h4 { color:var(--num-navy); letter-spacing:-.025em; }
+h1 { font-weight:800; }
+h2,h3 { font-weight:740; }
+[data-testid="stCaptionContainer"], .stCaption { color:var(--num-muted); }
+hr { border-color:var(--num-line)!important; }
+
+/* Barra lateral */
+[data-testid="stSidebar"] { background:linear-gradient(180deg,#20344F 0%,#172F49 100%); border-right:1px solid rgba(255,255,255,.07); }
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h2,
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] strong,
+[data-testid="stSidebar"] [data-testid="stWidgetLabel"] p,
+[data-testid="stSidebar"] label { color:#F5F8FE!important; }
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] p { color:#BCCDDD!important; }
+[data-testid="stSidebar"] [role="radiogroup"] label { border-radius:9px; padding:6px 9px; transition:background .15s ease; }
+[data-testid="stSidebar"] [role="radiogroup"] label:hover { background:rgba(255,255,255,.10); }
+[data-testid="stSidebar"] [data-testid="stAlert"] { background:rgba(93,132,174,.22); border:1px solid rgba(186,212,239,.15); border-radius:12px; }
+[data-testid="stSidebar"] [data-testid="stAlert"] p { color:#F5F8FE!important; }
+
+/* Encabezado y paneles HTML existentes */
+.hero { background:linear-gradient(115deg,#17324D 0%,#264E6C 65%,#346381 100%); color:white; padding:24px 28px; border-radius:var(--num-radius); margin-bottom:16px; box-shadow:var(--num-shadow); }
+.hero h2 { color:white!important; margin:0 0 6px 0; font-size:1.62rem; }
+.hero p { color:#E2ECF5; margin:0; font-size:.98rem; }
+.sectionbox { background:#FFF; border:1px solid var(--num-line); border-radius:var(--num-radius); padding:17px 20px; margin-bottom:12px; box-shadow:var(--num-shadow); }
+.kicker {font-size:11px;font-weight:800;color:#637C95;text-transform:uppercase;letter-spacing:.095em}
+.small {font-size:12px;color:#718199;margin-top:5px}
+.darktext {color:var(--num-ink);margin-bottom:10px}
+.chip {display:inline-block;border-radius:99px;padding:5px 12px;background:#EAF1F8;color:#2C587B;font-size:12px;font-weight:700}
+.chip.alert {background:#FFF0D8;color:#915D0C}
+.chip.good {background:#E1F3E9;color:#226A4C}
+
+/* Recorrido — nodos y conectores */
+.track {display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:15px 4px 4px;justify-content:center}
+.tracknode {max-width:185px;min-width:115px;white-space:normal;text-align:center;border:1px solid #D5E1EA;border-radius:12px;padding:12px 13px;background:#F4F7FA;font-size:12px;line-height:1.4;color:#5D7186;box-shadow:0 2px 4px rgba(20,45,75,.03)}
+.tracknode.active {background:#E4F0FC;border:2px solid #3C77AF;color:#164D7A;font-weight:800;box-shadow:0 0 0 3px rgba(70,127,181,.10)}
+.tracknode.done {background:#E6F5EC;border-color:#8ECFA9;color:#216D49}
+.arrow {color:#7692AE;font-size:22px;font-weight:700}
+.node {border-radius:12px;padding:12px 14px;border:1px solid var(--num-line);margin-bottom:9px;background:#FFF;line-height:1.48;box-shadow:0 2px 6px rgba(30,64,96,.025)}
+.node.done {background:#EDF8F1;border-color:#ABD8BC;color:#246E48}
+.node.current {background:#E8F2FF;border:2px solid #3976B4;color:#194F7B;box-shadow:0 0 0 3px rgba(44,116,180,.08)}
+.node.future {background:#F8FAFC;color:#75889A}
+.timeline {padding:10px 13px;border-left:3px solid #8DAECC;margin:7px 0 7px 5px;background:#EDF3F9;border-radius:0 9px 9px 0;line-height:1.4}
+
+/* Tarjetas y métricas Streamlit */
+[data-testid="stMetric"] { background:#FFF; border:1px solid var(--num-line); border-radius:var(--num-radius); padding:15px 18px; box-shadow:var(--num-shadow); }
+[data-testid="stMetricLabel"] { color:var(--num-muted); font-size:.87rem; }
+[data-testid="stMetricValue"] { color:var(--num-navy); font-weight:750; }
+[data-testid="stVerticalBlockBorderWrapper"] > div {border-radius:var(--num-radius)!important;}
+[data-testid="stVerticalBlockBorderWrapper"] {background:#FFF;border-radius:var(--num-radius);box-shadow:var(--num-shadow)}
+
+/* Formularios y controles */
+.stButton > button { border-radius:10px; min-height:2.65rem; font-weight:650; transition:filter .14s ease,transform .14s ease; }
+.stButton > button:hover { filter:brightness(.97); transform:translateY(-1px); }
+.stButton > button[kind="primary"] {background:#214E70;border-color:#214E70;color:white;}
+.stButton > button[kind="primary"]:hover {background:#173D5A;border-color:#173D5A;color:white;}
+[data-baseweb="select"] > div, [data-baseweb="input"] > div {border-radius:10px!important;}
+[data-testid="stProgressBar"] > div { border-radius:99px; }
+[data-testid="stProgressBar"] > div > div { background:#3777AB; border-radius:99px; }
+[data-testid="stAlert"] {border-radius:12px;}
+[data-testid="stDataFrame"] {border-radius:11px;overflow:hidden}
+
+@media(max-width:900px){
+ .main .block-container {padding:1rem .8rem 2rem;}
+ .hero {padding:19px 18px;}
+ .tracknode {min-width:95px;}
+}
+
+/* Fichas documentales del macroproceso */
+.activity-tile {display:flex;align-items:center;gap:13px;background:#fff;border:1px solid var(--num-line);border-radius:11px;padding:10px 14px;margin:6px 0;box-shadow:var(--num-shadow);}
+.activity-number {display:inline-flex;align-items:center;justify-content:center;min-width:31px;height:31px;border-radius:8px;color:#285A7C;background:#EAF2F8;font-weight:750;font-size:12px;}
+.decision-tile {background:#FFF9EC;border:1px solid #E9D8B5;border-left:4px solid #C68A3B;border-radius:10px;padding:10px 15px;margin:7px 0;color:#6A4A1D;}
+.rule-pill {display:inline-block;background:#E5EFF9;color:#1E517A;border-radius:8px;padding:6px 12px;margin:3px;font-weight:750;font-size:12px;}
+[data-baseweb="tab-list"] {gap:8px;flex-wrap:wrap;}
+[role="tab"] {border-radius:8px 8px 0 0;}
+
+
+/* ===== v1.8: paleta adaptativa según el tema activo de Streamlit =====
+   Se utilizan las variables del tema del usuario, tanto claro como oscuro. */
+:root {
+  --num-bg: var(--background-color, #F6F8FC);
+  --num-ink: var(--text-color, #25354A);
+  --num-navy: var(--text-color, #17324D);
+  --num-muted: color-mix(in srgb, var(--text-color, #25354A) 70%, var(--background-color, white));
+  --num-line: color-mix(in srgb, var(--text-color, #25354A) 20%, var(--background-color, white));
+  --num-panel: var(--secondary-background-color, #FFFFFF);
+  --num-card: color-mix(in srgb, var(--background-color, white) 88%, var(--text-color, #25354A) 12%);
+  --num-soft-blue: color-mix(in srgb, var(--background-color, white) 82%, #3976B4 18%);
+  --num-soft-green: color-mix(in srgb, var(--background-color, white) 83%, #3B9D72 17%);
+  --num-soft-amber: color-mix(in srgb, var(--background-color, white) 86%, #C68A3B 14%);
+}
+.stApp, [data-testid="stAppViewContainer"], [data-testid="stMain"] {
+  background:var(--num-bg) !important;
+  color:var(--num-ink) !important;
+}
+.stApp h1,.stApp h2,.stApp h3,.stApp h4 {color:var(--num-ink) !important;}
+/* Respetar textos claros del encabezado azul original */
+.stApp .hero h2,.stApp .hero p {color:white !important;}
+.stApp .hero p {color:#E2ECF5 !important;}
+.sectionbox,.node,.activity-tile,[data-testid="stMetric"],
+[data-testid="stVerticalBlockBorderWrapper"] {
+  background:var(--num-card) !important;
+  border-color:var(--num-line) !important;
+  color:var(--num-ink) !important;
+}
+.tracknode,.node.future {background:var(--num-card) !important;color:var(--num-muted) !important;border-color:var(--num-line) !important;}
+.tracknode.active,.node.current {background:var(--num-soft-blue) !important;color:var(--num-ink) !important;border-color:#5489C0 !important;}
+.tracknode.done,.node.done {background:var(--num-soft-green) !important;color:var(--num-ink) !important;border-color:#63AC87 !important;}
+.decision-tile,.chip.alert {background:var(--num-soft-amber) !important;color:var(--num-ink) !important;}
+.timeline {background:var(--num-card) !important;color:var(--num-ink) !important;}
+.activity-number,.rule-pill,.chip {background:var(--num-soft-blue) !important;color:var(--num-ink) !important;}
+.chip.good {background:var(--num-soft-green) !important;color:var(--num-ink) !important;}
+.darktext,.kicker,.small,[data-testid="stMetricValue"] {color:var(--num-ink) !important;}
+[data-testid="stMetricLabel"],.stCaption,[data-testid="stCaptionContainer"] {color:var(--num-muted) !important;}
+/* Alertas: no forzar texto blanco sobre aviso claro */
+[data-testid="stAlert"] {background:var(--num-card) !important;color:var(--num-ink) !important;border:1px solid var(--num-line) !important;}
+[data-testid="stAlert"] p, [data-testid="stAlert"] div, [data-testid="stAlert"] span {color:var(--num-ink) !important;}
+/* Los formularios y controles nativos siguen la paleta de Streamlit. */
